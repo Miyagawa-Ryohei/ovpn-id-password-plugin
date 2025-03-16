@@ -10,7 +10,7 @@ from ovpn_idpass_plugin.entity.db import Database
 class SqliteConnector(Database):
     engine: sqlalchemy.Engine
     def connect(self, location: str):
-        self.engine = sqlalchemy.create_engine(f'sqlite:///{location}', echo=True)
+        self.engine = sqlalchemy.create_engine(f'sqlite:///{location}', echo=False)
 
     @contextlib.contextmanager
     def session(self):
